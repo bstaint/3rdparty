@@ -1,0 +1,3 @@
+FSM_DIR = $$PWD/fsm
+
+INCLUDEPATH += $$FSM_DIR

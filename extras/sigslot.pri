@@ -1,0 +1,3 @@
+SIGSLOT_DIR = $$PWD/sigslot-plus
+
+INCLUDEPATH += $$SIGSLOT_DIR

@@ -1,0 +1,7 @@
+BOOST_DIR = $$PWD/boost
+
+INCLUDEPATH += $$BOOST_DIR
+
+DEFINES += _WIN32_WINNT=0x0601
+
+LIBS += -L$$BOOST_DIR/build/lib

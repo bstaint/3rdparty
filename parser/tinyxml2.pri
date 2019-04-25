@@ -1,0 +1,5 @@
+TINYXML2_DIR = $$PWD/tinyxml2
+
+INCLUDEPATH += $$TINYXML2_DIR
+
+SOURCES += $$TINYXML2_DIR/tinyxml2.cpp
