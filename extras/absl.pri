@@ -1,12 +1,25 @@
 ABSL_DIR = $$PWD/abseil-cpp
 
 defineReplace(abslExtend) {
+
     contains(absl, strings) {
-        absl *= int128 strings
+        absl *= throw_delegate strings
     }
 
     contains(absl, synchronization) {
-        absl *= base spinlock_wait malloc_internal stacktrace symbolize time synchronization
+        absl *= base spinlock_wait stacktrace symbolize graphcycles_internal time synchronization
+    }
+
+    contains(absl, graphcycles_internal) {
+        absl *= malloc_internal graphcycles_internal
+    }
+
+    contains(absl, time) {
+        absl *= int128 time_zone time
+    }
+
+    contains(absl, base) {
+        absl *= raw_logging_internal base
     }
 
     return($$absl)
@@ -23,8 +36,7 @@ defineReplace(abslLibrary) {
     return($$RET)
 }
 
-INCLUDEPATH += $$ABSL_DIR \
-        $$CCTZ_DIR/include
+INCLUDEPATH += $$ABSL_DIR
 
 DEFINES += NOMINMAX \
            WIN32_LEAN_AND_MEAN \
