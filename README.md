@@ -13,6 +13,13 @@ absl += strings
 include(E:/3rdParty/extras/absl.pri)
 ```
 
+boost
+```
+boost += system
+
+include(E:/3rdParty/boost.pri)
+```
+
 #### xmakeœ‡πÿ
 
 ```

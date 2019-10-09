@@ -2,16 +2,16 @@ ABSL_DIR = $$PWD/abseil-cpp
 
 defineReplace(abslExtend) {
 
-    contains(absl, strings) {
-        absl *= throw_delegate strings
-    }
-
     contains(absl, synchronization) {
         absl *= base spinlock_wait stacktrace symbolize graphcycles_internal time synchronization
     }
 
     contains(absl, graphcycles_internal) {
         absl *= malloc_internal graphcycles_internal
+    }
+
+    contains(absl, strings) {
+        absl *= throw_delegate strings
     }
 
     contains(absl, time) {
