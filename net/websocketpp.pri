@@ -1,0 +1,4 @@
+WEBSOCKETPP_DIR = $$PWD/websocketpp
+
+INCLUDEPATH += \
+    $$WEBSOCKETPP_DIR
