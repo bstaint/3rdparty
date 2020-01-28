@@ -25,6 +25,3 @@ defineReplace(generalExtendLibs) {
 INCLUDEPATH *= $$generalExtendIncludes()
 
 LIBS *= $$generalExtendLibs()
-
-message($$INCLUDEPATH)
-message($$LIBS)
