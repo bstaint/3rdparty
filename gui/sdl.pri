@@ -4,7 +4,10 @@ INCLUDEPATH += $$SDL_DIR/include
 
 DEFINES += _UNICODE UNICODE
 
-win32:LIBS += -L$$SDL_DIR/lib/x86
-else:LIBS += -L$$SDL_DIR/lib/x64
+contains(QT_ARCH, i386): ARCH = x86
+else: ARCH = x64
 
-LIBS +=  -lSDL2main -lSDL2
+LIBS += \
+        -L-L$$SDL_DIR/lib/$$ARCH \
+        -lSDL2main -lSDL2
+

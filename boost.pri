@@ -20,10 +20,9 @@ DEFINES += _WIN32_WINNT=0x0601
 INCLUDEPATH += $$BOOST_DIR
 LIBS += -L$$BOOST_DIR/build/lib
 
+contains(QT_ARCH, i386): ARCH = x32
+else: ARCH = x64
+
 win32 {
-    !contains(QMAKE_HOST.arch, x86_64) {
-        LIBS += $$boostLibrary("x32")
-    } else {
-        LIBS += $$boostLibrary("x64")
-    }
+    LIBS += $$boostLibrary($$ARCH)
 }

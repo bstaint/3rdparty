@@ -5,12 +5,9 @@ INCLUDEPATH += \
     $$SQLITE_DIR/src/ \
     $$SQLITE3PP_DIR/headeronly_src
     
-win32 {
-    contains(QMAKE_TARGET.arch, x86_64) {
-        LIBS += -L$$SQLITE_DIR/bin/x64/
-    } else {
-        LIBS += -L$$SQLITE_DIR/bin/x86/
-    }
+contains(QT_ARCH, i386): ARCH = x86
+else: ARCH = x64
     
-    LIBS += -lsqlite3
-}
+LIBS += \
+    -L$$SQLITE_DIR/bin/$$ARCH \
+    -lsqlite3
