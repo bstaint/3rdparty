@@ -1,7 +1,5 @@
 FFMPEG_DIR = $$PWD/ffmpeg
 
-INCLUDEPATH += $$FFMPEG_DIR/include
-
 contains(QT_ARCH, i386): ARCH = x86
 else: ARCH = x64
 

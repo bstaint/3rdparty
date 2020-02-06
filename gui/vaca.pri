@@ -1,7 +1,5 @@
 VACA_DIR = $$PWD/vaca
 
-INCLUDEPATH += $$VACA_DIR
-
 DEFINES += _UNICODE
 
 LIBS += -L$$VACA_DIR/lib -lvaca

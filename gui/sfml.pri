@@ -1,6 +1,6 @@
 SFML_DIR = $$PWD/SFML
 
-INCLUDEPATH += $$SFML_DIR/include
+DEFINES += _UNICODE
 
 LIBS += \
         -L$$SFML_DIR/lib \
@@ -11,5 +11,3 @@ CONFIG( debug, debug|release ) {
 } else {
 		LIBS += -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system
 }
-
-DEFINES += _UNICODE

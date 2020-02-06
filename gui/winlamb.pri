@@ -1,7 +1,5 @@
 WINLAMB_DIR = $$PWD/winlamb
 
-INCLUDEPATH += $$WINLAMB_DIR
-
 DEFINES += _UNICODE
 
 QMAKE_CXXFLAGS -= -Zc:strictStrings

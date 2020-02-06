@@ -1,7 +1,5 @@
 NANA_DIR = $$PWD/nana
 
-INCLUDEPATH += $$NANA_DIR/include
-
 DEFINES += _UNICODE
 
 LIBS += -lOle32 -lGdi32 -lUser32 -lShell32 -lComdlg32

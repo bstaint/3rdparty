@@ -1,7 +1,5 @@
 NONE_DIR = $$PWD/none
 
-INCLUDEPATH += $$NONE_DIR/src
-
 CONFIG( debug, debug|release ) {
 	LIBS += \
 		-L$$NONE_DIR/build/debug
