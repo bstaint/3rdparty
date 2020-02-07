@@ -1,7 +1,8 @@
 PYBIND11_DIR = $$PWD/pybind11
+PYTHON_DIR = D:/Develop/Python38
 
 INCLUDEPATH += \
-        D:/Develop/Python37/include \
+        $$PYTHON_DIR/include \
         $$PYBIND11_DIR/include
 
-LIBS += -LD:/Develop/Python37/libs
+LIBS += -L$$PYTHON_DIR/libs
