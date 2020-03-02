@@ -27,15 +27,12 @@ include (E:/3rdParty/boost.pri)
 #### xmakeœ‡πÿ
 
 ```
-includes("E:/3rdparty/xmake/3rdparty.lua")
 includes("E:/3rdparty/xmake/spdlog.lua")
     
 target("test")
     set_kind("binary")
     
-    if has_config("3rdparty") then
-        depend_spdlog()
-    end
+    add_deps("spdlog")
     
     add_files('main.cpp')
 ```
