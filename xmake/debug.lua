@@ -6,8 +6,9 @@ rule("msvc.debug")
             target:add("runenvs", "PATH",
                        "D:/Develop/msvc2019/Windows Kits/10/bin/10.0.18362.0/"..arch.."/ucrt",
                        "D:/Develop/msvc2019/VC/Redist/MSVC/14.22.27821/debug_nonredist/"..arch.."/Microsoft.VC142.DebugCRT")
-            target:add("cxflags", "/MDd")
+            target:add("cxxflags", "/MDd")
+            target:set("symbols", "debug")
 		elseif is_mode("release") then
-            target:add("cxflags", "/MD")
+            target:add("cxxflags", "/MD")
 		end
     end)

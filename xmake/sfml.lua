@@ -1,7 +1,7 @@
 local sfml = 'E:/3rdParty/gui/SFML'
 
 target("sfml")
-    local arch = get_config('arch')
+    local arch = get_config('arch') or ""
 
 	add_includedirs(path.join(sfml, arch, 'include'), {public = true})
 	add_linkdirs(path.join(sfml, arch, 'lib'), {public = true})

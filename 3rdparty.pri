@@ -1,33 +1,39 @@
-for(3rd, 3rdparty) {
-    3rd_pri = $$PWD/$$lower($$3rd".pri")
-    3rd_paths = $$split(3rd, "/")
-    3rd_name = $$lower($$member(3rd_paths, 1))
+3RDPART_DIR = $$PWD
+
+defineTest(add_deps) {
+    unset(repo)
+    repo = $$1
+    pri_file = $$3RDPART_DIR/$$lower($$repo".pri")
+    repos = $$split(repo, "/")
+    # name = $$lower($$member(repos, 1))
 
     origin_libs = $$LIBS
     origin_includepath = $$INCLUDEPATH
-    exists ($$3rd_pri) {
-        include ($$3rd_pri)
+    # load pri file
+    exists ($$pri_file) {
+        include ($$pri_file)
     }
 
+    # check include path
     isEqual(INCLUDEPATH, $$origin_includepath) {
-        exists($$PWD/$$3rd/include) {
-             INCLUDEPATH *= $$PWD/$$3rd/include
-        } else:exists($$inc/inc) {
-             INCLUDEPATH *= $$PWD/$$3rd/inc
-        } else:exists($$inc/src) {
-             INCLUDEPATH *= $$PWD/$$3rd/src
+        exists($$3RDPART_DIR/$$repo/include) {
+             INCLUDEPATH *= $$3RDPART_DIR/$$repo/include
+        } else:exists($$3RDPART_DIR/$$repo/inc) {
+             INCLUDEPATH *= $$3RDPART_DIR/$$repo/inc
+        } else:exists($$3RDPART_DIR/$$repo/src) {
+             INCLUDEPATH *= $$3RDPART_DIR/$$repo/src
         } else {
-             INCLUDEPATH *= $$PWD/$$3rd
+             INCLUDEPATH *= $$3RDPART_DIR/$$repo
         }
     }
 
-
+    # check libs path
     equals(LIBS, $$origin_libs) {
-        exists($$PWD/$$3rd/lib) {
-             LIBS *= -L$$PWD/$$3rd/lib
+        exists($$3RDPART_DIR/$$repo/lib) {
+             LIBS *= -L$$3RDPART_DIR/$$repo/lib
         }
     }
-}
 
-message("INCLUDEPATH:" $$INCLUDEPATH)
-message("LIBS:" $$LIBS)
+    export(INCLUDEPATH)
+    export(LIBS)
+}
