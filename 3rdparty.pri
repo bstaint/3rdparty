@@ -34,6 +34,10 @@ defineTest(add_deps) {
         }
     }
 
+    export(HEADERS)
+    export(SOURCES)
     export(INCLUDEPATH)
     export(LIBS)
+    export(DEFINES)
+    export(CONFIG)
 }

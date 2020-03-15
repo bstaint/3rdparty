@@ -2,7 +2,7 @@ DUILIB_DIR = $$PWD/DuiLib_Faw
 
 DEFINES += _UNICODE UNICODE UILIB_STATIC
 
-QMAKE_CXXFLAGS += /std:c++17
+CONFIG += c++17
 
 LIBS += \
     -L$$DUILIB_DIR/lib \
