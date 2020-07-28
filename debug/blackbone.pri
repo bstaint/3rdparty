@@ -9,8 +9,8 @@ SOURCES += \
         $$BLACKBONE_DIR/src/BlackBone/Symbols/SymbolLoader.cpp \
         $$BLACKBONE_DIR/src/BlackBone/Symbols/PDBHelper.cpp
 
-contains(QT_ARCH, i386): ARCH = Win32
-else: ARCH = Win64
+contains(QT_ARCH, i386): ARCH = x86
+else: ARCH = x64
 
 LIBS += \
         -L$$BLACKBONE_DIR/lib/$$ARCH \
