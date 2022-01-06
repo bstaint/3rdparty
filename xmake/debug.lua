@@ -1,5 +1,5 @@
-local WindowsSdkVerBinPath = 'D:\\Develop\\msvc2019\\Windows Kits\\10\\bin\\10.0.18362.0\\'
-local VCToolsRedistDir = 'D:\\Develop\\msvc2019\\VC\\Redist\\MSVC\\14.27.29016\\'
+local WindowsSdkVerBinPath = 'D:\\Develop\\msvc2022\\Windows Kits\\10\\bin\\10.0.19041.0\\10.0.18362.0\\'
+local VCToolsRedistDir = 'D:\\Develop\\msvc2022\\VC\\Redist\\MSVC\\14.30.30704\\'
 
 rule("msvc.debug")
     after_load(function (target)

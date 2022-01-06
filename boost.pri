@@ -1,6 +1,6 @@
 BOOST_DIR = $$PWD/boost
-BOOST_VER = 1_74
-MSVC_VER = vc142
+BOOST_VER = 1_78
+MSVC_VER = vc143
 
 defineReplace(boostLibrary) {
     arch = $$1
